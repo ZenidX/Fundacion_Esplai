@@ -1,0 +1,15 @@
+git config user.name                               ::::: ver el nombre del usuario
+git config --global user.name "ZenidX"             ::::: configurar el nombre del usuario
+git config user.email                              ::::: ver el mail del usuario
+git config --global user.email "zenid77@gmail.com" ::::: configurar el mail del usuario
+pwd            ::::: imprime la ruta del directorio actual
+ls             ::::: lista del contenido del directorio actual
+cd             ::::: cambiar de directorio
+cd..           ::::: retroceder en la ruta
+mkdir          ::::: crear directorio (make directory)
+git init       ::::: convertir directorio en repositorio git
+git init dir   ::::: convertir directorio en repositorio git dentro del directorio donde estabamos
+git status     ::::: ver como esta el area de trabajo
+git add        :::::
+git add dir    ::::: añadir al staging area el directorio
+
