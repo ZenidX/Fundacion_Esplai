@@ -49,7 +49,7 @@ git branch -D name-branch				::::: forzar eliminar una rama que se quiere elimin
 git push origin --delete name-branch			::::: eliminar una rama del repositorio remoto
 git log --since='Feb 1 2022' --until='Feb 28 2022'	::::: filtrar fechas en el historial de commits
 git diff file						::::: ver diferencia entre versiones de un archivo
-
+git config --global alias.ALIAS 'comandos'		::::: configurar alias de comandos largos o tediosos
 
 EJERCICIO AUTODIDACTA DE PRIMERA PARTE DE GIT
 
