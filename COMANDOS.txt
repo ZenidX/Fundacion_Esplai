@@ -1,3 +1,8 @@
+
+https://gitexplorer.com/
+https://ohshitgit.com/es
+
+
 PRIMERA PARTE DE GIT
 git config user.name					::::: ver el nombre del usuario
 git config --global user.name "ZenidX"			::::: configurar el nombre del usuario
@@ -41,8 +46,9 @@ git merge the-branch					::::: fusionar las ramas sobreescribiendo el historial 
 git merge --no-ff branch1 -m 'comentario'		::::: fusionar las ramas pero dejando un commit diferenciadolas en el historial
 git branch -d name-branch				::::: eliminar una rama que ya se haya gestionado y sin problemas
 git branch -D name-branch				::::: forzar eliminar una rama que se quiere eliminar y no deje por inacabada o sin fusionar
-git push origin --delete testBranch			::::: eliminar una rama del repositorio remoto
-
+git push origin --delete name-branch			::::: eliminar una rama del repositorio remoto
+git log --since='Feb 1 2022' --until='Feb 28 2022'	::::: filtrar fechas en el historial de commits
+git diff
 
 EJERCICIO AUTODIDACTA DE PRIMERA PARTE DE GIT
 
@@ -812,6 +818,416 @@ $ git
 
 EJERCICIO AUTODIDACTA DE TERCERA PARTE DE GIT
 
+
+Admin@MSI-XAVI MINGW64 ~
+$ cd ..
+
+Admin@MSI-XAVI MINGW64 /c/Users
+$ cd ..
+
+Admin@MSI-XAVI MINGW64 /c
+$ cd xavi
+
+Admin@MSI-XAVI MINGW64 /c/xavi
+$ cd archiov
+bash: cd: archiov: No such file or directory
+
+Admin@MSI-XAVI MINGW64 /c/xavi
+$ cd archivos
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos
+$ cd trabajo
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo
+$ cd universidad
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad
+$ cd fe
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe
+$ cd 'FullStack Web'
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web
+$ ls
+ Bootstrap/                                                                                   GIT/                    RegExp/
+ CSS/                                                                                         HTML/                  'Teoria GIT'/
+'Expo Feminista'/                                                                            'JavaScript y JQuery'/   Zgestion/
+'Express - Node API Introducción.pdf'                                                         Markdown/               repoGIT/
+'Fundamentos de Web'/                                                                         MySQL/
+'Fundamentos previos al desarrollo de páginas webs _ by David Bernal González _ Medium.pdf'   Programs/
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web
+$ cd git
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (main)
+$ git log
+commit 1065b9d536946df58790aeff39d8a3c1fe76172f (HEAD -> main, origin/main)
+Author: ZenidX <111122142+ZenidX@users.noreply.github.com>
+Date:   Sat Aug 13 11:19:20 2022 +0200
+
+    Update BodyAnclas.html
+
+commit 0330fa1275af5a4530eea7cdd903b5becc2aef56
+Author: ZenidX <zenid77@gmail.com>
+Date:   Sat Aug 13 11:04:19 2022 +0200
+
+    primer intento con anclas y comandos
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (main)
+$ git log --all
+commit d19e6c90079a59ef38ca0505e82ec17e5742855a (noFastForwardExample)
+Author: ZenidX <zenid77@gmail.com>
+Date:   Sat Aug 13 12:36:50 2022 +0200
+
+    Añadir el pdf de teoria de las narices
+
+commit dd9e53b05672de0cd4d050c14a68c3cf83e38b2b (origin/testBranch, testBranch)
+Author: ZenidX <zenid77@gmail.com>
+Date:   Sat Aug 13 12:15:32 2022 +0200
+
+    Añadir los pdf que estamos en una rama
+
+commit 1065b9d536946df58790aeff39d8a3c1fe76172f (HEAD -> main, origin/main)
+Author: ZenidX <111122142+ZenidX@users.noreply.github.com>
+Date:   Sat Aug 13 11:19:20 2022 +0200
+
+    Update BodyAnclas.html
+
+commit 0330fa1275af5a4530eea7cdd903b5becc2aef56
+Author: ZenidX <zenid77@gmail.com>
+Date:   Sat Aug 13 11:04:19 2022 +0200
+
+    primer intento con anclas y comandos
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (main)
+$ git branch
+* main
+  noFastForwardExample
+  testBranch
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (main)
+$ git checkout testBranch
+Switched to branch 'testBranch'
+M       COMANDOS.txt
+Your branch is up to date with 'origin/testBranch'.
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (testBranch)
+$ git add COMANDOS.txt
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (testBranch)
+$ git commit -m "Intento de No Fast Forward actualizando COMAANDOS.txt"
+[testBranch 3fe5c54] Intento de No Fast Forward actualizando COMAANDOS.txt
+ 1 file changed, 813 insertions(+), 14 deletions(-)
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (testBranch)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 4.95 KiB | 4.95 MiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/ZenidX/Fundacion_Esplai.git
+   dd9e53b..3fe5c54  testBranch -> testBranch
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (testBranch)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (main)
+$ git merge --no-ff testBranch -m "Finiquitando el intento de NO-FF"
+Merge made by the 'ort' strategy.
+ Bloque de GIT.pdf  | Bin 0 -> 3857881 bytes
+ Bloque de GIT.pptx | Bin 0 -> 63066664 bytes
+ COMANDOS.txt       | 827 ++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 3 files changed, 813 insertions(+), 14 deletions(-)
+ create mode 100644 Bloque de GIT.pdf
+ create mode 100644 Bloque de GIT.pptx
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (main)
+$ git log --all --oneline --decorate --graph
+*   6d08f60 (HEAD -> main) Finiquitando el intento de NO-FF
+|\
+| * 3fe5c54 (origin/testBranch, testBranch) Intento de No Fast Forward actualizando COMAANDOS.txt
+| * dd9e53b Añadir los pdf que estamos en una rama
+|/
+| * d19e6c9 (noFastForwardExample) Añadir el pdf de teoria de las narices
+|/
+* 1065b9d (origin/main) Update BodyAnclas.html
+* 0330fa1 primer intento con anclas y comandos
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (main)
+$ git checkout noFastForwardExample
+Switched to branch 'noFastForwardExample'
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (noFastForwardExample)
+$ git status
+On branch noFastForwardExample
+nothing to commit, working tree clean
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (noFastForwardExample)
+$ git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (main)
+$ git branch -d
+fatal: branch name required
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (main)
+$ git branch -d testBranch
+Deleted branch testBranch (was 3fe5c54).
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (main)
+$ git branch -d noFastForwardExample
+error: The branch 'noFastForwardExample' is not fully merged.
+If you are sure you want to delete it, run 'git branch -D noFastForwardExample'.
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (main)
+$ git checkout noFastForwardExample
+Switched to branch 'noFastForwardExample'
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (noFastForwardExample)
+$ git add .
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (noFastForwardExample)
+$ git add .
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (noFastForwardExample)
+$ git status
+On branch noFastForwardExample
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   COMANDOS.txt
+
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (noFastForwardExample)
+$ git commit -m "Venga va..."
+[noFastForwardExample 5710c58] Venga va...
+ 1 file changed, 815 insertions(+), 14 deletions(-)
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (noFastForwardExample)
+$ git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (main)
+$ git merge --no-ff noFastForwardExample -m "Venga, te hago merge y ya te eliminao..."
+Auto-merging COMANDOS.txt
+CONFLICT (content): Merge conflict in COMANDOS.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (main|MERGING)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   COMANDOS.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (main|MERGING)
+$ git branch
+* main
+  noFastForwardExample
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (main|MERGING)
+$ git branch -d noFastForwardExample
+error: The branch 'noFastForwardExample' is not fully merged.
+If you are sure you want to delete it, run 'git branch -D noFastForwardExample'.
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (main|MERGING)
+$ git branch -D noFastForwardExample
+Deleted branch noFastForwardExample (was 5710c58).
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (main|MERGING)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   COMANDOS.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (main|MERGING)
+$ mail
+bash: mail: command not found
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (main|MERGING)
+$ git log
+commit 6d08f608dbdc486e866086d625a9ac254ae81917 (HEAD -> main)
+Merge: 1065b9d 3fe5c54
+Author: ZenidX <zenid77@gmail.com>
+Date:   Sat Aug 13 13:09:19 2022 +0200
+
+    Finiquitando el intento de NO-FF
+
+commit 3fe5c54286588cb908be77387598ec13ac33f725 (origin/testBranch)
+Author: ZenidX <zenid77@gmail.com>
+Date:   Sat Aug 13 13:07:34 2022 +0200
+
+    Intento de No Fast Forward actualizando COMAANDOS.txt
+
+commit dd9e53b05672de0cd4d050c14a68c3cf83e38b2b
+Author: ZenidX <zenid77@gmail.com>
+Date:   Sat Aug 13 12:15:32 2022 +0200
+
+    Añadir los pdf que estamos en una rama
+
+commit 1065b9d536946df58790aeff39d8a3c1fe76172f (origin/main)
+Author: ZenidX <111122142+ZenidX@users.noreply.github.com>
+Date:   Sat Aug 13 11:19:20 2022 +0200
+
+    Update BodyAnclas.html
+
+commit 0330fa1275af5a4530eea7cdd903b5becc2aef56
+Author: ZenidX <zenid77@gmail.com>
+Date:   Sat Aug 13 11:04:19 2022 +0200
+
+    primer intento con anclas y comandos
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (main|MERGING)
+$ git log --graph --oneline --decorate --all
+*   6d08f60 (HEAD -> main) Finiquitando el intento de NO-FF
+|\
+| * 3fe5c54 (origin/testBranch) Intento de No Fast Forward actualizando COMAANDOS.txt
+| * dd9e53b Añadir los pdf que estamos en una rama
+|/
+* 1065b9d (origin/main) Update BodyAnclas.html
+* 0330fa1 primer intento con anclas y comandos
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (main|MERGING)
+$ git branch
+* main
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (main|MERGING)
+$ git push origin --delete testBranch
+To https://github.com/ZenidX/Fundacion_Esplai.git
+ - [deleted]         testBranch
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (main|MERGING)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   COMANDOS.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (main|MERGING)
+$ git rm --cached
+fatal: No pathspec was given. Which files should I remove?
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (main|MERGING)
+$ git rm --cached COMANDOS.txt
+rm 'COMANDOS.txt'
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (main|MERGING)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
+
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+        deleted:    COMANDOS.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        COMANDOS.txt
+
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (main|MERGING)
+$ git add COMANDOS.txt
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (main|MERGING)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
+
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+        modified:   COMANDOS.txt
+
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (main|MERGING)
+$ git add COMANDOS.txt
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (main|MERGING)
+$ git commit -m "venga..."
+[main 90179c4] venga...
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (main)
+$ git --all --decorate --graph --oneline
+unknown option: --all
+usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--super-prefix=<path>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (main)
+$ git log --all --decorte --oneline --graph
+fatal: unrecognized argument: --decorte
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (main)
+$ git log --all --graph --oneline --decorate
+*   90179c4 (HEAD -> main) venga...
+|\
+| * 5710c58 Venga va...
+| * d19e6c9 Añadir el pdf de teoria de las narices
+* |   6d08f60 Finiquitando el intento de NO-FF
+|\ \
+| |/
+|/|
+| * 3fe5c54 Intento de No Fast Forward actualizando COMAANDOS.txt
+| * dd9e53b Añadir los pdf que estamos en una rama
+|/
+* 1065b9d (origin/main) Update BodyAnclas.html
+* 0330fa1 primer intento con anclas y comandos
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (main)
+$ BIEN, SEGUIMOS!!!!
+BIEN, SEGUIMOSgit log --all --graph --oneline --decorategit log --all --graph --oneline --decorate
+bash: BIEN,: command not found
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (main)
+$ UFF EJERCICIOS...cosas de interes...sigo leyendo y paso a otra cosa GIT FINALIZADO
+bash: UFF: command not found
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/fe/FullStack Web/git (main)
+$
 
 
 
