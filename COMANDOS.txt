@@ -1,15 +1,816 @@
-git config user.name                               ::::: ver el nombre del usuario
-git config --global user.name "ZenidX"             ::::: configurar el nombre del usuario
-git config user.email                              ::::: ver el mail del usuario
-git config --global user.email "zenid77@gmail.com" ::::: configurar el mail del usuario
-pwd            ::::: imprime la ruta del directorio actual
-ls             ::::: lista del contenido del directorio actual
-cd             ::::: cambiar de directorio
-cd..           ::::: retroceder en la ruta
-mkdir          ::::: crear directorio (make directory)
-git init       ::::: convertir directorio en repositorio git
-git init dir   ::::: convertir directorio en repositorio git dentro del directorio donde estabamos
-git status     ::::: ver como esta el area de trabajo
-git add        :::::
-git add dir    ::::: añadir al staging area el directorio
+PRIMERA PARTE DE GIT
+git config user.name					::::: ver el nombre del usuario
+git config --global user.name "ZenidX"			::::: configurar el nombre del usuario
+git config user.email					::::: ver el mail del usuario
+git config --global user.email "zenid77@gmail.com"	::::: configurar el mail del usuario
+pwd							::::: imprime la ruta del directorio actual
+ls							::::: lista del contenido del directorio actual
+cd							::::: cambiar de directorio
+cd ..							::::: retroceder en la ruta
+mkdir							::::: crear directorio (make directory)
+git init						::::: convertir directorio en repositorio git
+git init dir						::::: convertir directorio en repositorio git dentro del directorio donde estabamos
+git status						::::: ver como esta el area de trabajo
+git add							::::: añadir al staging area todos los archivos del directorio
+git add file						::::: añadir al staging area un archivos del directorio
+git rm --cached file					::::: remover del staging area y devoilverlo al working directory un archivo
+git commit -m "label"					::::: enviar los archivos del staging area al repositorio local con etiqueta
+git commit -am "label"					::::: enviar archivos del working directory directos al repositorio local
+git log							::::: visualizar el historial de commits con la identificación, autor, fecha y mensaje/etiqueta
+git push						::::: subir los archivos del repositorio local al repositorio remoto
+git remote -v						::::: ver cuantos repositorios remotos estan asociados al repositorio local
+git remote add origin URL				::::: asociar un repositorio remoto con el repositorio local
+git branch -M main					::::: ---tiene que ver con la rama principal
+git push -u origin main					::::: ---hace que iniciemos sesión en el nuevo repositorio
+git pull						::::: cargar los archivos del repositorio remoto al local
+git pull origin main					::::: cargar los commits de la rama main
+git clone URL						::::: clonar un repositorio remoto entero
+
+SEGUNDA PARTE DE GIT
+git log --graph --oneline --decorate			::::: visualizar el historial de commits en lineas solo con las etiquetas/comentarios
+git checkout code-commit				::::: restaurar el git cuando code-commit hacia adelante y hacia atrás temporalmente
+git log --graph --oneline --decorate --reflog		::::: visualizar el historial con los futuros commits si se viene de hacer un checkout al pasado
+git checkout main					::::: restaurar el git al estado de la rama principal
+git show code-commit					::::: visualizar los cambios realizados en el codigo de los archivos en el code-commit
+git branch						::::: Ver las ramas temporales
+git branch new-branch					::::: crear una rama temporal
+git checkout the-branch					::::: situarse sobre la rama temporal
+git push --set-upstream origin the-branch		::::: subimos la rama al repositorio remoto
+git log --all --oneline --decorate --graph		::::: ver todos los commit del repositorio local
+git merge the-branch					::::: fusionar las ramas sobreescribiendo el historial con el de the-branch ajeno
+git merge --no-ff branch1 -m 'comentario'		::::: fusionar las ramas pero dejando un commit diferenciadolas en el historial
+
+
+EJERCICIO AUTODIDACTA DE PRIMERA PARTE DE GIT
+
+
+Admin@MSI-XAVI MINGW64 ~
+$ cd ..
+
+Admin@MSI-XAVI MINGW64 /c/Users
+$ cd ..
+
+Admin@MSI-XAVI MINGW64 /c
+$ cd xavi
+
+Admin@MSI-XAVI MINGW64 /c/xavi
+$ cd archivos
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos
+$ cd trabajo
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo
+$ cd universidad
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad
+$ cd Fe
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe
+$ ls
+'FullStack Web'/  'FullStack Web.rar'   Zgestion/
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe
+$ cd 'FullStack Web'
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web
+$ cd git
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (master)
+$ git add COMANDOS.txt
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   BodyAnclas.html
+        new file:   COMANDOS.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Bloque de GIT.pdf
+        Bloque de GIT.pptx
+
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (master)
+$ git commit primer intento con Anclas y Comandos
+error: pathspec 'primer' did not match any file(s) known to git
+error: pathspec 'intento' did not match any file(s) known to git
+error: pathspec 'con' did not match any file(s) known to git
+error: pathspec 'Anclas' did not match any file(s) known to git
+error: pathspec 'y' did not match any file(s) known to git
+error: pathspec 'Comandos' did not match any file(s) known to git
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (master)
+$ git commit -m primer intento con anclas y comandos
+error: pathspec 'intento' did not match any file(s) known to git
+error: pathspec 'con' did not match any file(s) known to git
+error: pathspec 'anclas' did not match any file(s) known to git
+error: pathspec 'y' did not match any file(s) known to git
+error: pathspec 'comandos' did not match any file(s) known to git
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (master)
+$ git commit -m "primer intento con anclas y comandos"
+[master (root-commit) 0330fa1] primer intento con anclas y comandos
+ 2 files changed, 189 insertions(+)
+ create mode 100644 BodyAnclas.html
+ create mode 100644 COMANDOS.txt
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (master)
+$ git log
+commit 0330fa1275af5a4530eea7cdd903b5becc2aef56 (HEAD -> master)
+Author: ZenidX <zenid77@gmail.com>
+Date:   Sat Aug 13 11:04:19 2022 +0200
+
+    primer intento con anclas y comandos
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (master)
+$ git puch
+git: 'puch' is not a git command. See 'git --help'.
+
+The most similar command is
+        push
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (master)
+$ git push
+fatal: No configured push destination.
+Either specify the URL from the command-line or configure a remote repository using
+
+    git remote add <name> <url>
+
+and then push using the remote name
+
+    git push <name>
+
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (master)
+$ git remote -v
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (master)
+$ git remote add origin https://github.com/ZenidX/Fundacion_Esplai.git
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (master)
+$ git remote -v
+origin  https://github.com/ZenidX/Fundacion_Esplai.git (fetch)
+origin  https://github.com/ZenidX/Fundacion_Esplai.git (push)
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (master)
+$ git remote add origin https://github.com/ZenidX/Fundacion_Esplai.git
+error: remote origin already exists.
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (master)
+$ git branch -M main
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (main)
+$ git push -u origin main
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 1.51 KiB | 1.51 MiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/ZenidX/Fundacion_Esplai.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (main)
+$ git push
+Everything up-to-date
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (main)
+$ git log
+commit 0330fa1275af5a4530eea7cdd903b5becc2aef56 (HEAD -> main, origin/main)
+Author: ZenidX <zenid77@gmail.com>
+Date:   Sat Aug 13 11:04:19 2022 +0200
+
+    primer intento con anclas y comandos
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (main)
+$ pull
+bash: pull: command not found
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (main)
+$ git pull
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 704 bytes | 58.00 KiB/s, done.
+From https://github.com/ZenidX/Fundacion_Esplai
+   0330fa1..1065b9d  main       -> origin/main
+Updating 0330fa1..1065b9d
+Fast-forward
+ BodyAnclas.html | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (main)
+$ git pull origin main
+From https://github.com/ZenidX/Fundacion_Esplai
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (main)
+$ git logh
+git: 'logh' is not a git command. See 'git --help'.
+
+The most similar command is
+        log
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (main)
+$ git log
+commit 1065b9d536946df58790aeff39d8a3c1fe76172f (HEAD -> main, origin/main)
+Author: ZenidX <111122142+ZenidX@users.noreply.github.com>
+Date:   Sat Aug 13 11:19:20 2022 +0200
+
+    Update BodyAnclas.html
+
+commit 0330fa1275af5a4530eea7cdd903b5becc2aef56
+Author: ZenidX <zenid77@gmail.com>
+Date:   Sat Aug 13 11:04:19 2022 +0200
+
+    primer intento con anclas y comandos
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (main)
+$ ls
+'Bloque de GIT.pdf'  'Bloque de GIT.pptx'   BodyAnclas.html   COMANDOS.txt
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (main)
+$ cd ..
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web
+$ mkdr repogit
+bash: mkdr: command not found
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web
+$ mkdir repoGIT
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web
+$ cd repoGIT
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/repoGIT
+$ git init repo01
+Initialized empty Git repository in C:/Xavi/Archivos/Trabajo/Universidad/FE/FullStack Web/repoGIT/repo01/.git/
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/repoGIT
+$ ls
+repo01/
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/repoGIT
+$ git status
+fatal: not a git repository (or any of the parent directories): .git
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/repoGIT
+$ cd repo01
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/repoGIT/repo01 (master)
+$ ls
+Listas.html
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/repoGIT/repo01 (master)
+$ git add Listas.html
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/repoGIT/repo01 (master)
+$ git commit "Papaya!"
+error: pathspec 'Papaya!' did not match any file(s) known to git
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/repoGIT/repo01 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   Listas.html
+
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/repoGIT/repo01 (master)
+$ git commit "Papaya!"
+error: pathspec 'Papaya!' did not match any file(s) known to git
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/repoGIT/repo01 (master)
+$ git commit'Papaya!'
+git: 'commitPapaya!' is not a git command. See 'git --help'.
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/repoGIT/repo01 (master)
+$ git commit 'Papaya!'
+error: pathspec 'Papaya!' did not match any file(s) known to git
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/repoGIT/repo01 (master)
+$ git commit -m "Papaya!"
+[master (root-commit) c9f4b1c] Papaya!
+ 1 file changed, 103 insertions(+)
+ create mode 100644 Listas.html
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/repoGIT/repo01 (master)
+$ git remote add origin https://github.com/ZenidX/repo01.git
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/repoGIT/repo01 (master)
+$ git branch -M main
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/repoGIT/repo01 (main)
+$ git push -u origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 1.08 KiB | 1.08 MiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/ZenidX/repo01.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/repoGIT/repo01 (main)
+$ git pull
+Already up to date.
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/repoGIT/repo01 (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/repoGIT/repo01 (main)
+$ git push
+Everything up-to-date
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/repoGIT/repo01 (main)
+$
+
+
+EJERCICIO AUTODIDACTA DE SEGUNDA PARTE DE GIT
+
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/repoGIT/repo01 (main)
+$ git info
+git: 'info' is not a git command. See 'git --help'.
+
+The most similar commands are
+        init
+        mailinfo
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/repoGIT/repo01 (main)
+$ cd ..
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/repoGIT
+$ cd ..
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web
+$ cd git
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (main)
+$ git log
+commit 1065b9d536946df58790aeff39d8a3c1fe76172f (HEAD -> main, origin/main)
+Author: ZenidX <111122142+ZenidX@users.noreply.github.com>
+Date:   Sat Aug 13 11:19:20 2022 +0200
+
+    Update BodyAnclas.html
+
+commit 0330fa1275af5a4530eea7cdd903b5becc2aef56
+Author: ZenidX <zenid77@gmail.com>
+Date:   Sat Aug 13 11:04:19 2022 +0200
+
+    primer intento con anclas y comandos
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (main)
+$ git log --graph --oneline --decorate
+* 1065b9d (HEAD -> main, origin/main) Update BodyAnclas.html
+* 0330fa1 primer intento con anclas y comandos
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (main)
+$ git checkout 0330fa1
+Note: switching to '0330fa1'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 0330fa1 primer intento con anclas y comandos
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git ((0330fa1...))
+$ git log --graph --oneline --decorate
+* 0330fa1 (HEAD) primer intento con anclas y comandos
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git ((0330fa1...))
+$ git log --graph --oneline ---decorate --reflog
+fatal: unrecognized argument: ---decorate
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git ((0330fa1...))
+$ git log --graph --oneline --decorate --reflog
+* 1065b9d (origin/main, main) Update BodyAnclas.html
+* 0330fa1 (HEAD) primer intento con anclas y comandos
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git ((0330fa1...))
+$ git checkout 1065b9d
+Previous HEAD position was 0330fa1 primer intento con anclas y comandos
+HEAD is now at 1065b9d Update BodyAnclas.html
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git ((1065b9d...))
+$ git log --graph --oneline --decorate
+* 1065b9d (HEAD, origin/main, main) Update BodyAnclas.html
+* 0330fa1 primer intento con anclas y comandos
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git ((1065b9d...))
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (main)
+$ git log --graph --oneline --decorate
+* 1065b9d (HEAD -> main, origin/main) Update BodyAnclas.html
+* 0330fa1 primer intento con anclas y comandos
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (main)
+$ git checkout 0330fa1
+Note: switching to '0330fa1'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 0330fa1 primer intento con anclas y comandos
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git ((0330fa1...))
+$ git checkout main
+Previous HEAD position was 0330fa1 primer intento con anclas y comandos
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (main)
+$ git show 1065b9d
+commit 1065b9d536946df58790aeff39d8a3c1fe76172f (HEAD -> main, origin/main)
+Author: ZenidX <111122142+ZenidX@users.noreply.github.com>
+Date:   Sat Aug 13 11:19:20 2022 +0200
+
+    Update BodyAnclas.html
+
+diff --git a/BodyAnclas.html b/BodyAnclas.html
+index 666600f..b491140 100644
+--- a/BodyAnclas.html
++++ b/BodyAnclas.html
+@@ -11,7 +11,7 @@
+ <body>
+     <header>
+
+-        <h1 id="indice">Indice</h1>
++        <h1 id="indice">IndiceXXXXXX</h1>
+         <nav>
+             <a href="#post-1">Post 1</a>
+             <a href="#post-2">Post 2</a>
+@@ -171,4 +171,4 @@
+     </footer>
+ </body>
+
+-</html>
+\ No newline at end of file
++</html>
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (main)
+$ git branch
+* main
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (main)
+$ git branch testBranch
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (main)
+$ git branch
+* main
+  testBranch
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (main)
+$ git checkout testBranch
+Switched to branch 'testBranch'
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (testBranch)
+$ git branch
+  main
+* testBranch
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (testBranch)
+$ git log --graph --oneline -decorate
+error: did you mean `--decorate` (with two dashes)?
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (testBranch)
+$ git log --graph --oneline --decorate
+* 1065b9d (HEAD -> testBranch, origin/main, main) Update BodyAnclas.html
+* 0330fa1 primer intento con anclas y comandos
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (testBranch)
+$ git status
+On branch testBranch
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Bloque de GIT.pdf
+        Bloque de GIT.pptx
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (testBranch)
+$ git add .
+git
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (testBranch)
+$ git status
+On branch testBranch
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   Bloque de GIT.pdf
+        new file:   Bloque de GIT.pptx
+
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (testBranch)
+$ git log
+commit 1065b9d536946df58790aeff39d8a3c1fe76172f (HEAD -> testBranch, origin/main, main)
+Author: ZenidX <111122142+ZenidX@users.noreply.github.com>
+Date:   Sat Aug 13 11:19:20 2022 +0200
+
+    Update BodyAnclas.html
+
+commit 0330fa1275af5a4530eea7cdd903b5becc2aef56
+Author: ZenidX <zenid77@gmail.com>
+Date:   Sat Aug 13 11:04:19 2022 +0200
+
+    primer intento con anclas y comandos
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (testBranch)
+$ git commit -m "Añadir los pdf que estamos en una rama"
+[testBranch dd9e53b] Añadir los pdf que estamos en una rama
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 Bloque de GIT.pdf
+ create mode 100644 Bloque de GIT.pptx
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (testBranch)
+$ git log
+commit dd9e53b05672de0cd4d050c14a68c3cf83e38b2b (HEAD -> testBranch)
+Author: ZenidX <zenid77@gmail.com>
+Date:   Sat Aug 13 12:15:32 2022 +0200
+
+    Añadir los pdf que estamos en una rama
+
+commit 1065b9d536946df58790aeff39d8a3c1fe76172f (origin/main, main)
+Author: ZenidX <111122142+ZenidX@users.noreply.github.com>
+Date:   Sat Aug 13 11:19:20 2022 +0200
+
+    Update BodyAnclas.html
+
+commit 0330fa1275af5a4530eea7cdd903b5becc2aef56
+Author: ZenidX <zenid77@gmail.com>
+Date:   Sat Aug 13 11:04:19 2022 +0200
+
+    primer intento con anclas y comandos
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (testBranch)
+$ git push
+fatal: The current branch testBranch has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin testBranch
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (testBranch)
+$ git push --set-upstream origin testBranch
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 63.15 MiB | 3.52 MiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: warning: See http://git.io/iEPt8g for more information.
+remote: warning: File Bloque de GIT.pptx is 60.15 MB; this is larger than GitHub's recommended maximum file size of 50.00 MB
+remote: warning: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.
+remote:
+remote: Create a pull request for 'testBranch' on GitHub by visiting:
+remote:      https://github.com/ZenidX/Fundacion_Esplai/pull/new/testBranch
+remote:
+To https://github.com/ZenidX/Fundacion_Esplai.git
+ * [new branch]      testBranch -> testBranch
+branch 'testBranch' set up to track 'origin/testBranch'.
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (testBranch)
+$ git status
+On branch testBranch
+Your branch is up to date with 'origin/testBranch'.
+
+nothing to commit, working tree clean
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (testBranch)
+$ git log --all --oneline --decorate --graph
+* dd9e53b (HEAD -> testBranch, origin/testBranch) Añadir los pdf que estamos en una rama
+* 1065b9d (origin/main, main) Update BodyAnclas.html
+* 0330fa1 primer intento con anclas y comandos
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (testBranch)
+$ git checkout main
+Unlink of file 'Bloque de GIT.pdf' failed. Should I try again? (y/n) y
+Unlink of file 'Bloque de GIT.pdf' failed. Should I try again? (y/n) n
+warning: unable to unlink 'Bloque de GIT.pdf': Invalid argument
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (main)
+$ git merge testBranch
+error: The following untracked working tree files would be overwritten by merge:
+        Bloque de GIT.pdf
+Please move or remove them before you merge.
+Aborting
+Updating 1065b9d..dd9e53b
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (main)
+$ ls
+'Bloque de GIT.pdf'   BodyAnclas.html   COMANDOS.txt
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (main)
+$ git log --all
+commit dd9e53b05672de0cd4d050c14a68c3cf83e38b2b (origin/testBranch, testBranch)
+Author: ZenidX <zenid77@gmail.com>
+Date:   Sat Aug 13 12:15:32 2022 +0200
+
+    Añadir los pdf que estamos en una rama
+
+commit 1065b9d536946df58790aeff39d8a3c1fe76172f (HEAD -> main, origin/main)
+Author: ZenidX <111122142+ZenidX@users.noreply.github.com>
+Date:   Sat Aug 13 11:19:20 2022 +0200
+
+    Update BodyAnclas.html
+
+commit 0330fa1275af5a4530eea7cdd903b5becc2aef56
+Author: ZenidX <zenid77@gmail.com>
+Date:   Sat Aug 13 11:04:19 2022 +0200
+
+    primer intento con anclas y comandos
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (main)
+$ git checkout testBranch
+error: The following untracked working tree files would be overwritten by checkout:
+        Bloque de GIT.pdf
+Please move or remove them before you switch branches.
+Aborting
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (main)
+$ git commit -am "todo para arriba"
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Bloque de GIT.pdf
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (main)
+$ git add 'Bloque de GIT.pdf'
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   Bloque de GIT.pdf
+
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (main)
+$ git push
+Everything up-to-date
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (main)
+$ git branch
+* main
+  testBranch
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (main)
+$ git checkout -b noFastForwardExample
+Switched to a new branch 'noFastForwardExample'
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (noFastForwardExample)
+$ git branch
+  main
+* noFastForwardExample
+  testBranch
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (noFastForwardExample)
+$ git status
+On branch noFastForwardExample
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   Bloque de GIT.pdf
+
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (noFastForwardExample)
+$ git add .
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (noFastForwardExample)
+$ git status
+On branch noFastForwardExample
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   Bloque de GIT.pdf
+
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (noFastForwardExample)
+$ git commit -m "Añadir el pdf de teoria de las narices"
+[noFastForwardExample d19e6c9] Añadir el pdf de teoria de las narices
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 Bloque de GIT.pdf
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (noFastForwardExample)
+$ git log
+commit d19e6c90079a59ef38ca0505e82ec17e5742855a (HEAD -> noFastForwardExample)
+Author: ZenidX <zenid77@gmail.com>
+Date:   Sat Aug 13 12:36:50 2022 +0200
+
+    Añadir el pdf de teoria de las narices
+
+commit 1065b9d536946df58790aeff39d8a3c1fe76172f (origin/main, main)
+Author: ZenidX <111122142+ZenidX@users.noreply.github.com>
+Date:   Sat Aug 13 11:19:20 2022 +0200
+
+    Update BodyAnclas.html
+
+commit 0330fa1275af5a4530eea7cdd903b5becc2aef56
+Author: ZenidX <zenid77@gmail.com>
+Date:   Sat Aug 13 11:04:19 2022 +0200
+
+    primer intento con anclas y comandos
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (noFastForwardExample)
+$ git checkout main
+Unlink of file 'Bloque de GIT.pdf' failed. Should I try again? (y/n) y
+Unlink of file 'Bloque de GIT.pdf' failed. Should I try again? (y/n) y
+Unlink of file 'Bloque de GIT.pdf' failed. Should I try again? (y/n) y
+Unlink of file 'Bloque de GIT.pdf' failed. Should I try again? (y/n) y
+Unlink of file 'Bloque de GIT.pdf' failed. Should I try again? (y/n) y
+Unlink of file 'Bloque de GIT.pdf' failed. Should I try again? (y/n) n
+warning: unable to unlink 'Bloque de GIT.pdf': Invalid argument
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (main)
+$ git merge --no-ff noFastForwardExample -m "sin fiufiu merge"
+error: The following untracked working tree files would be overwritten by merge:
+        Bloque de GIT.pdf
+Please move or remove them before you merge.
+Aborting
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Bloque de GIT.pdf
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (main)
+$ git rm
+fatal: No pathspec was given. Which files should I remove?
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (main)
+$ git rm --cached Bloque de GIT.pdf
+fatal: pathspec 'Bloque' did not match any files
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (main)
+$ git rm --cached 'Bloque de GIT.pdf'
+fatal: pathspec 'Bloque de GIT.pdf' did not match any files
+
+Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (main)
+$ git
+
+EJERCICIO AUTODIDACTA DE TERCERA PARTE DE GIT
+
+
+
+
+
 
