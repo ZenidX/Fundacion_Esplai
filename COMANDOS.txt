@@ -39,6 +39,9 @@ git push --set-upstream origin the-branch		::::: subimos la rama al repositorio 
 git log --all --oneline --decorate --graph		::::: ver todos los commit del repositorio local
 git merge the-branch					::::: fusionar las ramas sobreescribiendo el historial con el de the-branch ajeno
 git merge --no-ff branch1 -m 'comentario'		::::: fusionar las ramas pero dejando un commit diferenciadolas en el historial
+git branch -d name-branch				::::: eliminar una rama que ya se haya gestionado y sin problemas
+git branch -D name-branch				::::: forzar eliminar una rama que se quiere eliminar y no deje por inacabada o sin fusionar
+git push origin --delete testBranch			::::: eliminar una rama del repositorio remoto
 
 
 EJERCICIO AUTODIDACTA DE PRIMERA PARTE DE GIT
@@ -806,6 +809,8 @@ fatal: pathspec 'Bloque de GIT.pdf' did not match any files
 
 Admin@MSI-XAVI MINGW64 /c/xavi/archivos/trabajo/universidad/Fe/FullStack Web/git (main)
 $ git
+
+EJERCICIO AUTODIDACTA DE TERCERA PARTE DE GIT
 
 
 
