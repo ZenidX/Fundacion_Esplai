@@ -48,7 +48,8 @@ git branch -d name-branch				::::: eliminar una rama que ya se haya gestionado y
 git branch -D name-branch				::::: forzar eliminar una rama que se quiere eliminar y no deje por inacabada o sin fusionar
 git push origin --delete name-branch			::::: eliminar una rama del repositorio remoto
 git log --since='Feb 1 2022' --until='Feb 28 2022'	::::: filtrar fechas en el historial de commits
-git diff
+git diff file						::::: ver diferencia entre versiones de un archivo
+
 
 EJERCICIO AUTODIDACTA DE PRIMERA PARTE DE GIT
 
